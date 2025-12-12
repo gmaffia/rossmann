@@ -1,0 +1,23 @@
+{
+  "name": "Deep Learning Avanzado ITBA",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "python.defaultInterpreterPath": "/opt/conda/envs/dev/bin/python"
+      }
+    }
+  },
+  "postCreateCommand": "conda env create -f environment.yml || echo 'Environment already exists'",
+  "forwardPorts": [8888],
+  "remoteUser": "root"
+}
